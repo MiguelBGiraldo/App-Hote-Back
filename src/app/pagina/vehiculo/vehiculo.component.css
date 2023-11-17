@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.alquiler-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    max-width: 800px;
+    width: 90%;
+}
+
+.alquiler-container h1 {
+    color: #ff0000;
+}
+
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 0px solid #ccc;
+    padding: 10px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.vehiculo-info {
+    width: 60%;
+}
+
+/* Estilos para el checkbox */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.checkbox-label {
+    margin-left: 10px;
+}
+
+/* Estilos para la columna de fechas y servicios adicionales */
+.fechas-servicios {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estilos para los campos de fechas y servicios adicionales */
+.campo-fecha {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.campo-fecha label,
+.campo-fecha input {
+    margin-right: 10px;
+}
+
+.campo-servicios {
+    display: flex;
+    align-items: center;
+}
+
+.campo-servicios label,
+.campo-servicios input {
+    margin-right: 10px;
+}
+
+.campo-servicios input[type="checkbox"] {
+    width: auto;
+}
+
+/* Estilos para el valor total */
+.valor-total {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ff0000;
+    margin-top: 10px;
+}

@@ -1,0 +1,57 @@
+
+<body>
+    <div class="hospedaje-container">
+        <h1>Hospedaje en Ciudad</h1>
+        <div class="filtro-ciudad">
+            <label for="ciudad">Filtrar por Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad">
+            <button onclick="filtrarHoteles()">Filtrar</button>
+        </div>
+
+        <!-- Ejemplo de hotel -->
+        <div class="hotel">
+            <img src="hospedaje.png" alt="Hotel 1" style="max-width: 20%; height: auto;">
+            <h2>Hotel Ejemplo 1</h2>
+            <div class="descripcion">
+                <p>Descripción del hotel...</p>
+            </div>
+            <div class="precio">
+                Precio: $100 por noche
+            </div>
+            <div class="reserva">
+                <label for="fechaInicio">Fecha de inicio:</label>
+                <input type="date" id="fechaInicio" name="fechaInicio">
+                <br>
+                <label for="fechaFin">Fecha de fin:</label>
+                <input type="date" id="fechaFin" name="fechaFin">
+                <br>
+                <span class="cantidad-dias">Cantidad de días: 0</span>
+                <br>
+                <label for="adultos">Adultos:</label>
+                <input type="number" id="adultos" name="adultos" min="1" max="10">
+                <br>
+                <label for="ninos">Niños:</label>
+                <input type="number" id="ninos" name="ninos" min="0" max="10">
+                <br>
+                <label for="habitacion">Nivel de Habitación:</label>
+                <select id="habitacion" name="habitacion">
+                    <option value="estandar">Estándar</option>
+                    <option value="deluxe">Deluxe</option>
+                    <option value="suite">Suite</option>
+                </select>
+                <br>
+                <label for="regimen">Régimen:</label>
+                <select id="regimen" name="regimen">
+                    <option value="desayuno">Desayuno</option>
+                    <option value="media-pension">Media Pensión</option>
+                    <option value="pension-completa">Pensión Completa</option>
+                </select>
+                <br>
+                <button onclick="reservar()">Reservar</button>
+                <button onclick="borrar()">Borrar</button>
+            </div>
+        </div>
+
+        <!-- Agrega más hoteles con la misma estructura según sea necesario -->
+    </div>    
+</body>

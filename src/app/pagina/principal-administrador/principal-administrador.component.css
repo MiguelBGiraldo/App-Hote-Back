@@ -1,0 +1,30 @@
+
+.header {
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+.sidebar {
+    height: 25rem;
+    width: 200px;
+    position: fixed ;
+    /* Ancho del menú lateral */
+    background-color: #f0f0f0;
+    /* Color de fondo del menú lateral */
+    margin-top: 1rem;
+    left: 0;
+    top:2rem;
+    /* Ajuste de espaciado en la parte superior del menú */
+}
+
+#mainContent {
+  margin-left: 200px; /* Ajuste del espacio del contenido principal en relación al menú */
+  padding: 20px; /* Ajuste de espaciado para el contenido principal */
+  
+  top: 0;
+}
+  
+  /* Ajustes para el tamaño de las vistas */
+   .col-9 {
+    padding: 20px; /* Agrega espaciado al contenido principal */
+  } 
+  

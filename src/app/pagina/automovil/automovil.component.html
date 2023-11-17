@@ -1,0 +1,157 @@
+<div id="formContent" class="container">
+    <h1>Registro de automovil</h1>
+    <div class="card p-5">
+        <form #f="ngForm">
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">id: </label>
+                <div class="col-sm-10">
+                    <input #id="ngModel" class="form-control" [ngClass]="id.invalid &&
+                     (id.dirty || id.touched) ? 'is-invalid' : ''" type="text" name="nombre" [(ngModel)]="automovil.id"
+                        required maxlength="50" />
+                </div>
+            </div>
+
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Marca: </label>
+                <div class="col-sm-10">
+                    <input #marca="ngModel" class="form-control" [ngClass]="marca.invalid &&
+    (marca.dirty || marca.touched) ? 'is-invalid' : ''" name="descripcion" [(ngModel)]="automovil.marca" required>
+
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Color: </label>
+                <div class="col-sm-10">
+                    <input #color="ngModel" class="form-control" [ngClass]="color.invalid &&
+(color.dirty || color.touched) ? 'is-invalid' : ''" type="text" name="unidades" [(ngModel)]="automovil.color"
+                        required />
+                </div>
+            </div>
+
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Precio: </label>
+                <div class="col-sm-10">
+                    <input #precio="ngModel" class="form-control" [ngClass]="precio.invalid &&
+                (precio.dirty || precio.touched) ? 'is-invalid' : ''" type="number" name="precio"
+                        [(ngModel)]="automovil.precio" required maxlength="50" />
+                </div>
+            </div>
+
+            
+                <div  class="mb-3 row">
+                  <div class="col-md-4" *ngFor="let item of automovil.imagenes;  index as i">
+                    <div class="card">
+
+                        <button (click)="eliminarImagen(item.ID)" class="btn btn-danger boton-eliminar">
+                            <i class="fas fa-trash"></i>
+                          </button>
+
+                      <img src="{{item.RUTA}}" class="card-img-top img-fluid"  alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">{{"Imagen" + (i+1)}}</h5>
+                        <!-- <p class="card-text">{{item.description}}</p> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Gama: </label>
+                <div class="col-sm-10">
+                    <select name="gama"  class="form-control" [(ngModel)]="automovil.gama" required >
+                        <option value="0" selected >Seleccione una categoría</option>
+                        <option value="1">Alta</option>
+                        <option value="2">Media</option>
+                        <option value="3">Baja</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Tipo: </label>
+                <div class="col-sm-10">
+                    <select  name="tipo" class="form-control" [(ngModel)]="automovil.tipo" required>
+                        <option value="0" selected>Seleccione una tipo</option>
+                        <option value="1">Autmovil</option>
+                        <option value="2">Buseta</option>
+                        <option value="3">Motocicleta</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Imagen: </label>
+                <div class="col-sm-7">
+                    <input type="file" class="form-control" name="imagenes" (change)="onFileChange($event)" multiple />
+                </div>
+                <div class="col-sm-3">
+                    <button type="submit" [disabled]="archivos == null" class="btn btn-primary"
+                        (click)="subirImagenes()">
+
+                        <i class="fa-solid fa-cloud-arrow-up me-2"></i>Subir imágenes
+                    </button>
+                </div>
+            </div>
+
+
+
+            <!-- 
+            <div>
+                <label >Categoría: </label>
+                <select >
+                <option value="" selected >Seleccione una categoría</option>
+                <option [value]="i+1" *ngFor="let item of categorias; index as i" >{{item}}</option>
+                </select>
+                </div> -->
+
+            <!-- <div>
+                <label >Categoría: </label>
+                <select name="categoria" [(ngModel)]="producto.categoria" required >
+                <option value="" selected >Seleccione una categoría</option>
+                <option [value]="i+1" *ngFor="let item of categorias; index as i" >{{item}}</option>
+                </select>
+                </div> -->
+
+
+            <!-- <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Categoria: </label>
+                <div class="col-sm-10">
+
+                    <br>
+                    <div class="form-check">
+                        <input type="checkbox" [value]="i+1" *ngFor="let item of categorias; index as i"
+                            [(ngModel)]="producto.categorias" class="form-check-input" name="categoria" value=""
+                            selected>
+
+                        <label class=" mt-3 form-check-label row" *ngFor="let categoria of  categorias; index as i">
+                            <input [value]="categoria" type="checkbox" [checked]="categoriaSeleccionadas.includes(categoria)" (change)="checkSeleccionado(categoria, $event)"
+                                class="form-checkbox h-5 w-5 text-indigo-650"><span
+                                class="ml-2 text-gray-700">{{categoria}}</span>
+                        </label>
+
+                        <!-- <option type="checkbox" [value]="i+1" *ngFor="let item of categorias; index as i">{{item}}
+                        </option> 
+
+                    </div>
+                </div>
+            </div> -->
+
+            <button type="submit" [disabled]="f.invalid" class="btn btn-sm1 btn-outline-primary me-2"
+                (click)="!esEdicion ? crearAutomovil() : editarAutomovil()"> <i class="fa-solid
+                {{esEdicion ? 'fa-pencil' : 'bi bi-clipboard-plus'}} me-1"></i>{{ esEdicion ? 'Editar' : 'Crear' }}
+                Automovil</button>
+
+
+            <!-- <button type="submit" [disabled]="f.invalid" class="btn btn-sm1 btn-outline-primary me-2"
+                (click)="crearProducto()">
+                Crear <i class="bi bi-clipboard-plus"></i></button> -->
+            <button type="submit" class="btn btn-sm1 btn-outline-primary" routerLink="/principalAdmin">
+                Volver <i class="bi bi-arrow-bar-left"></i></button>
+            <app-alerta [alerta]="alerta"></app-alerta>
+        </form>
+    </div>
+</div>

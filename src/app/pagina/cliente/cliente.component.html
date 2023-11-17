@@ -1,0 +1,153 @@
+
+    <div class="container">
+        <h1>Registro de Cliente</h1>
+        <form #f="ngForm" >
+            <!-- Campos para la creación de un cliente -->
+
+            <div class="mb-3 row form-group">
+                <label class="label" >Nombre:</label>
+                <div class="input-group mb-2">
+                  <!-- <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="bi bi-person-circle"></i></div>
+                  </div> -->
+                  <input #nombre="ngModel" type="text" class="form-control" id="inlineFormInputGroup" 
+                  placeholder="Username" [ngClass]="nombre.invalid && (nombre.dirty || nombre.touched) 
+                  ? 'is-invalid' : ''" type="text" name="nombre" [(ngModel)]="usuario.nombre"  required maxlength="50">
+                </div>
+            </div>
+
+            <div class="mb-3 row form-group">
+                <label class="label" >Apellido:</label>
+                <div class="input-group mb-2">
+                  <!-- <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="bi bi-person-circle"></i></div>
+                  </div> -->
+                  <input #apellido="ngModel" type="text" class="form-control" id="inlineFormInputGroup" 
+                  placeholder="Username" [ngClass]="apellido.invalid && (apellido.dirty || apellido.touched) 
+                  ? 'is-invalid' : ''" type="text" name="nombre" [(ngModel)]="usuario.apellido"  required maxlength="50">
+                </div>
+            </div>
+
+            <div class="mb-3 row form-group">
+                <label class="label" >Email:</label>
+                <div class="input-group mb-2">
+                  <!-- <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="bi bi-envelope-at"></i></div>
+                  </div> -->
+                  <input #email="ngModel" type="text" class="form-control" id="inlineFormInputGroup" 
+                  placeholder="Correo electronico" [ngClass]="email.invalid && (email.dirty || email.touched) 
+                  ? 'is-invalid' : ''" type="text" name="email" [(ngModel)]="usuario.correo"  required >
+                </div>
+            </div>
+        
+            <div class="mb-3 row form-group">
+                <label class="label" >Dirección:</label>
+                <div class="input-group mb-2">
+                  <!-- <div class="input-group-prepend">
+                    <div class="input-group-text"> <i class="bi bi-house"></i></div>
+                  </div> -->
+                  <input #direccion="ngModel" type="text" class="form-control" id="inlineFormInputGroup" 
+                  placeholder="Direccion" [ngClass]="direccion.invalid && (direccion.dirty || direccion.touched) 
+                  ? 'is-invalid' : ''" type="text" name="direccion" [(ngModel)]="usuario.direccion"  required >
+                </div>
+            </div>
+
+            <div class="mb-3 row form-group">
+              <label class="label" >Cedula:</label>
+              <div class="input-group mb-2">
+                <!-- <div class="input-group-prepend">
+                  <div class="input-group-text"><i class="bi bi-card-heading"></i></div>
+                </div> -->
+                <input #cedula="ngModel" type="text" class="form-control" id="inlineFormInputGroup" 
+                placeholder="cedula" [ngClass]="cedula.invalid && (cedula.dirty || cedula.touched) 
+                ? 'is-invalid' : ''" type="text" name="cedula" [(ngModel)]="usuario.cedula"  required >
+              </div>
+          </div>
+
+            <div class="mb-3 row form-group">
+                <label class="label" >Teléfono:</label>
+                <div class="input-group mb-2">
+                  <!-- <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="bi bi-telephone"></i></div>
+                  </div> -->
+                  <input #telefono="ngModel" type="text" class="form-control" id="inlineFormInputGroup" 
+                  placeholder="Telefono" [ngClass]="telefono.invalid && (telefono.dirty || telefono.touched) 
+                  ? 'is-invalid' : ''" type="text" name="telefono" [(ngModel)]="usuario.telefono"  required >
+                </div>
+            </div>
+
+            <div class="mb-3 row form-group">
+                <label class="label" >Contraseña:</label>
+                <div class="input-group mb-2">
+                  <!-- <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="bi bi-key"></i></div>
+                  </div> -->
+                  <input #password="ngModel" type="text" class="form-control" id="inlineFormInputGroup" 
+                  placeholder="Contraseña" [ngClass]="password.invalid && (password.dirty || password.touched) 
+                  ? 'is-invalid' : ''" type="password" name="password" [(ngModel)]="usuario.password"  required>
+                </div>
+            </div>
+            <div class="mb-3 row form-group">
+                <label class="label" >Repetir Contraseña:</label>
+                <div class="input-group mb-2">
+                  <!-- <div class="input-group-prepend">
+                    <div class="input-group-text"><i class="bi bi-key"></i></div>
+                  </div> -->
+                  <input #confirmacion="ngModel" type="text" class="form-control" id="inlineFormInputGroup" 
+                  placeholder="Repetir Contraseña" [ngClass]="confirmacion.invalid && (confirmacion.dirty || confirmacion.touched) ||
+                  !sonIguales()    ? 'is-invalid' : ''" type="password" name="confirmarPassword" [(ngModel)]="usuario.confirmarPassword"  required>
+                </div>
+            </div>
+            <div class="alert alert-danger" role="alert" *ngIf="!sonIguales()">Las contraseñas no
+                coinciden</div>
+                <button type="submit" [disabled]="f.invalid" class="btn btn-sm1 btn-outline-primary me-2 button-container" (click)="!esEdicion ? registrar() : editarCliente()"> <i class="fa-solid
+                  {{esEdicion ? 'fa-pencil' : 'bi bi-clipboard-plus'}} me-1"></i>{{ esEdicion ? 'Editar' : 'Crear' }}
+                  Cliente</button>
+                  <button type="submit" class="btn btn-sm1 btn-outline-primary button-container" routerLink="/principalAdmin">
+                    Volver <i class="bi bi-arrow-bar-left"></i></button>
+
+            <app-alerta [alerta]="alerta"></app-alerta>
+
+
+            <!-- <div class="form-group">
+                <label for="identificacion">Identificación:</label>
+                <input type="text" id="identificacion" name="identificacion" required>
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" name="apellido" required>
+            </div>
+            <div class="form-group">
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección:</label>
+                <input type="text" id="direccion" name="direccion" required>
+            </div> 
+            <div class="form-group">
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="direccion" name="direccion" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmarPassword">Confirmar Contraseña:</label>
+                <input type="password" id="confirmarPassword" name="confirmarPassword" required>
+            </div>
+            <div class="button-container">
+                <button type="submit">Registrarse</button>
+            </div> -->
+        </form>
+    </div>
+

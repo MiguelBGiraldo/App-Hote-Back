@@ -1,0 +1,72 @@
+<body>
+    <div class="alquiler-container">
+        <h1>Alquiler de Vehículos</h1>
+
+        <!-- Estructura de tabla para mostrar la información de vehículos y la información adicional -->
+        <table>
+            <thead>
+                <tr>
+                    <th class="vehiculo-info">Información del Vehículo</th>
+                    <th>Información Adicional</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Ejemplo de vehículo 1 -->
+                <tr>
+                    <td class="vehiculo-info">
+                    <img src="carro1.jpg" alt="Producto 2" style="max-width: 40%; height: auto;">
+                        <h2>Marca: Toyota</h2>
+                        <p>Tipo: Sedán</p>
+                        <p>Color: Gris</p>
+                        <p>Gama: Económica</p>
+                        <p>Estado: Disponible</p>
+                        <p>Precio por Día: $50</p>
+                             <div class="checkbox-container">
+                            <input type="checkbox" id="vehiculo1" name="vehiculo1">
+                            <label class="checkbox-label" for="vehiculo1">Seleccionar</label>
+                        </div>
+                    </td>
+                    <td>
+
+                        <div class="fechas-servicios">
+                            <div class="campo-fecha">
+                                <label for="fechaInicio1">Fecha de Inicio:</label>
+                                <input type="date" id="fechaInicio1" name="fechaInicio1">
+                                <label for="fechaFin1">Fecha de Entrega:</label>
+                                <input type="date" id="fechaFin1" name="fechaFin1">
+                            </div>
+                            <div class="campo-servicios">
+                                <label for="gps1">GPS:</label>
+                                <input type="checkbox" id="gps1" name="gps1">
+                                <label for="seguro1">Seguro:</label>
+                                <input type="checkbox" id="seguro1" name="seguro1">
+                            </div>
+                            <span class="valor-total">Valor Total: $0</span>
+                        </div>
+                            
+                    </td>
+                </tr>
+
+                <!-- Ejemplo de vehículo 2 -->
+                <tr>
+                    <td class="vehiculo-info">
+                    <img src="carro2.jpg" alt="Producto 2" style="max-width: 40%; height: auto;">
+                        <h2>Marca: Ford</h2>
+                        <p>Tipo: SUV</p>
+                        <p>Color: Negro</p>
+                        <p>Gama: Premium</p>
+                        <p>Estado: Disponible</p>
+                        <p>Precio por Día: $80</p>
+                          <div class="checkbox-container">
+                            <input type="checkbox" id="vehiculo2" name="vehiculo2">
+                            <label class="checkbox-label" for="vehiculo2">Seleccionar</label>
+                        </div>
+                    </td>
+                    
+                </tr>
+
+                <!-- Agrega más vehículos con la misma estructura según sea necesario -->
+            </tbody>
+        </table>
+    </div>
+</body>

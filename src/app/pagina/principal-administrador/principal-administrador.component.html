@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+      <div class="col-3 mt-5" class="sidebar">
+        <!-- Menú -->
+        <app-menu (displayView)="showView($event)"></app-menu>
+      </div>
+      <div class="col-9 mt-5" id="mainContent">
+        <!-- Vista 1: Reemplaza 'app-crud-view' por el nombre de tu componente de la Vista 1 -->
+        <app-gestion-clientes *ngIf="currentView === 'cliente'"></app-gestion-clientes>
+        
+        <!-- Vista 2: Reemplaza 'app-another-view' por el nombre de tu componente de la Vista 2 -->
+        <app-gestio-automovil *ngIf="currentView === 'automovil'"></app-gestio-automovil>
+        
+        <!-- Vista 3: Reemplaza 'app-additional-view' por el nombre de tu componente de la Vista 3 -->
+        <app-gestion-articulo *ngIf="currentView === 'articulo'"></app-gestion-articulo>
+
+        <app-gestion-habitacion *ngIf="currentView === 'habitacion'"></app-gestion-habitacion>
+
+        <app-gestion-hotel *ngIf="currentView === 'hotel'"></app-gestion-hotel>
+
+        <app-gestion-instalacion *ngIf="currentView === 'instalacion'"></app-gestion-instalacion>
+
+      </div>
+    </div>
+  </div>

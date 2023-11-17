@@ -1,0 +1,90 @@
+<div id="formContent" class="container">
+    <h1>Registro de hotel</h1>
+    <div class="card p-5">
+        <form #f="ngForm">
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">id: </label>
+                <div class="col-sm-10">
+                    <input #id="ngModel" class="form-control" [ngClass]="id.invalid &&
+                     (id.dirty || id.touched) ? 'is-invalid' : ''" type="number" name="id" [(ngModel)]="hotel.id"
+                        required maxlength="50" />
+                </div>
+            </div>
+
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Nombre: </label>
+                <div class="col-sm-10">
+                    <input #nombre="ngModel" placeholder="Nombre" class="form-control" [ngClass]="nombre.invalid &&
+    (nombre.dirty || nombre.touched) ? 'is-invalid' : ''" name="nombre" [(ngModel)]="hotel.nombre" required>
+
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Telefono: </label>
+                <div class="col-sm-10">
+                    <input #telefono="ngModel" type="text" placeholder="Telefono" class="form-control" [ngClass]="telefono.invalid &&
+    (telefono.dirty || telefono.touched) ? 'is-invalid' : ''" name="telefono" [(ngModel)]="hotel.telefono" required>
+
+                </div>
+            </div>
+
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Precio: </label>
+                <div class="col-sm-10">
+                    <input #precio="ngModel" placeholder="precio" class="form-control" [ngClass]="precio.invalid &&
+                (precio.dirty || precio.touched) ? 'is-invalid' : ''" type="number" name="precio"
+                        [(ngModel)]="hotel.precio" required maxlength="50" />
+                </div>
+            </div>
+
+
+            <div class="mb-3 row">
+                <div class="col-md-4" *ngFor="let item of hotel.imagenes;  index as i">
+                    <div class="card">
+
+                        <button (click)="eliminarImagen(item.ID)" class="btn btn-danger boton-eliminar">
+                            <i class="fas fa-trash"></i>
+                        </button>
+
+                        <img src="{{item.RUTA}}" class="card-img-top img-fluid" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{"Imagen" + (i+1)}}</h5>
+                            <!-- <p class="card-text">{{item.description}}</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Imagen: </label>
+                <div class="col-sm-7">
+                    <input type="file" class="form-control" name="imagenes" (change)="onFileChange($event)" multiple />
+                </div>
+                <div class="col-sm-3">
+                    <button type="submit" [disabled]="archivos == null" class="btn btn-primary"
+                        (click)="subirImagenes()">
+
+                        <i class="fa-solid fa-cloud-arrow-up me-2"></i>Subir imágenes
+                    </button>
+                </div>
+            </div>
+
+            <button type="submit" [disabled]="f.invalid" class="btn btn-sm1 btn-outline-primary me-2"
+                (click)="!esEdicion ? crearHotel() : editarHotel()"> <i class="fa-solid
+                {{esEdicion ? 'fa-pencil' : 'bi bi-clipboard-plus'}} me-1"></i>{{ esEdicion ? 'Editar' : 'Crear' }}
+                Hotel</button>
+
+
+            <button type="submit" class="btn btn-sm1 btn-outline-primary" routerLink="/principalAdmin">
+                Volver <i class="bi bi-arrow-bar-left"></i></button>
+            <app-alerta [alerta]="alerta"></app-alerta>
+        </form>
+    </div>
+</div>

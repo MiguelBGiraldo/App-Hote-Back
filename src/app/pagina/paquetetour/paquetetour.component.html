@@ -1,0 +1,54 @@
+<body>
+    
+    <div class="paquete-container">
+        <h1>Paquetes Turísticos</h1>
+
+        <!-- Ejemplo de paquete turístico 1 -->
+        <div class="paquete">
+            <img src="parque.jpg" alt="Paquete Turístico 1" style="max-width: 20%; height: auto;">
+            <h2>Paquete Turístico parque del cafe</h2>
+            <div class="descripcion">
+                <p>Parque del cafe incluye almuerzo</p>
+                <p>ID del Paquete: 1</p>
+                <p>Empresa: Nombre de la empresa</p>
+                <p>Precio por Persona: $100</p>
+                <div class="cantidad-personas">
+                    <label for="cantidadPersonas1">Cantidad de Personas:</label>
+                    <input type="number" id="cantidadPersonas1" name="cantidadPersonas1" min="1" max="10" onchange="calcularTotal(100, 'total1', 'cantidadPersonas1')">
+                </div>
+                <label for="fecha1">Fecha de Tour:</label>
+                <input type="date" id="fecha1" name="fecha1">
+                <p>Total: $<span id="total1">0</span></p>
+            </div>
+            <div class="reserva">
+                <button onclick="reservar1()">Reservar</button>
+                <button onclick="borrar1()">Borrar</button>
+            </div>
+        </div>
+
+        <!-- Ejemplo de paquete turístico 2 -->
+        <div class="paquete">
+            <img src="salento.jpg" alt="Paquete Turístico 2" style="max-width: 20%; height: auto;">
+            <h2>Paquete Turístico Salento</h2>
+            <div class="descripcion">
+                <p>Recorrido cafetero, salento quindio, plaza principal  y mirador</p>
+                <p>ID del Paquete: 2</p>
+                <p>Empresa: Nombre de la empresa</p>
+                <p>Precio por Persona: $150</p>
+                <div class="cantidad-personas">
+                    <label for="cantidadPersonas2">Cantidad de Personas:</label>
+                    <input type="number" id="cantidadPersonas2" name="cantidadPersonas2" min="1" max="10" onchange="calcularTotal(150, 'total2', 'cantidadPersonas2')">
+                </div>
+                <label for="fecha2">Fecha de Tour:</label>
+                <input type="date" id="fecha2" name="fecha2">
+                <p>Total: $<span id="total2">0</span></p>
+            </div>
+            <div class="reserva">
+                <button onclick="reservar2()">Reservar</button>
+                <button onclick="borrar2()">Borrar</button>
+            </div>
+        </div>
+
+        <!-- Agrega más paquetes turísticos con la misma estructura según sea necesario -->
+    </div>
+</body>

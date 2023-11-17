@@ -1,0 +1,40 @@
+<body>
+    <div class="container">
+        <h1>Panel de Administrador</h1>
+        <h2>Bienvenido, Administrador</h2>
+
+        <!-- Opciones para administrador -->
+        <div class="admin-options">
+            <button (click)="mostrarFormularioCrearCliente()">Crear Cliente</button>
+            <!-- Otras opciones para el administrador -->
+        </div>
+
+        <!-- Formulario para crear un cliente (inicialmente oculto) -->
+        <div *ngIf="mostrarFormulario">
+            <h2>Crear Cliente</h2>
+            <form method="post" action="procesar_creacion_cliente.php">
+                <!-- Campos para la creación de un cliente -->
+                <div class="form-group">
+                    <label for="nombreCliente">Nombre:</label>
+                    <input type="text" id="nombreCliente" name="nombreCliente" required>
+                </div>
+                <div class="form-group">
+                    <label for="correoCliente">Correo:</label>
+                    <input type="email" id="correoCliente" name="correoCliente" required>
+                </div>
+                <!-- Otros campos para la creación de un cliente -->
+                <div class="button-container">
+                    <button type="submit">Crear Cliente</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Script para mostrar/ocultar el formulario de creación de cliente -->
+        <!-- <script>
+            function mostrarFormularioCrearCliente() {
+                var formularioCrearCliente = document.getElementById("formularioCrearCliente");
+                formularioCrearCliente.style.display = "block";
+            }
+        </script> -->
+    </div>
+</body>
