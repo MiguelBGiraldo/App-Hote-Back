@@ -21,7 +21,6 @@ export class ListaTourComponent {
 
   ngOnInit() {
 
-    alert("Holaa");
     this.listarPaquetes(1);
   }
 
