@@ -58,4 +58,9 @@ export class AutomovilService {
     return this.http.get<MensajeDTO>(`${this.automovilUrl}?peticion=listarImgProductos&id=${codigoAutomovil}`)
   }
 
+  public listarServicios(){
+
+    return this.http.get<MensajeDTO>(`${this.automovilUrl}?peticion=listarServicios`);
+  }
+
 }

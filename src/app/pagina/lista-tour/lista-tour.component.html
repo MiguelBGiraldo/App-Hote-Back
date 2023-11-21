@@ -1,0 +1,48 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Carousel indicators -->
+    <!-- <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol> -->
+    <!-- Wrapper for carousel items -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col-sm-3 card" *ngFor="let item of paquetesTour">
+            <div class="thumb-wrapper">
+              
+              <div class="thumb-content">
+                <h4>Nombre: {{ item.nombre }}</h4>
+                <p class="item-price">
+                  <span>Color: {{ item.descripcion }}</span>
+                </p>
+                
+                <p class="item-price">
+                    <span>precio : ${{ item.precio }}</span>
+                  </p>
+                
+                <a class="btn btn-outline-primary" (click)="selectCar(item.id)" role="button">Seleccionar</a>
+
+                <!-- <button class="btn btn-sm btn-danger" (click)="ponerFavorito(item.codigo)">
+                  <i class="bi bi-star-fill"></i>
+                </button> -->
+
+                <!-- <button class="btn btn-sm btn-danger" (click)="ponerCarrito(item.codigo)">
+                  <i class="bi bi-cart4"></i>
+                </button> -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Carousel controls -->
+    <!-- <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+      <i class="fa fa-angle-left"></i>
+    </a>
+    <a class="carousel-control-next" href="#myCarousels" data-slide-to="next">
+      <i class="fa fa-angle-right"></i>
+    </a> -->
+  </div>

@@ -1,0 +1,56 @@
+<div class="hospedaje-container">
+    <h1>Hospedaje en Ciudad</h1>
+
+
+    <!-- Ejemplo de hotel -->
+    <div class="hotel">
+
+
+        <h2>{{automovil.marca}}</h2>
+        <div class="descripcion">
+            <p>color {{automovil.color}}</p>
+        </div>
+        <div class="precio">
+            Precio Dia: {{automovil.precio | currency:'USD':'symbol':'1.2-2'}} 
+        </div>
+        <div class="nivel">
+           Gama : {{automovil.gama}}
+        </div>
+        <div class="reserva">
+            <label for="fechaInicio">Fecha de inicio:</label>
+            <input type="date" id="fechaInicio" (change) = "actualizarRes()" name="fechaInicio" [(ngModel)]="autoMovilReserva.fechaInicio">
+            <br>
+            <label for="fechaFin">Fecha de fin:</label>
+            <input type="date" id="fechaFin" (change) = "actualizarRes()" name="fechaFin" [(ngModel)]="autoMovilReserva.fechaSalida">
+            <br>
+            <span class="cantidad-dias">Cantidad de días: {{totalDias}}</span>
+            <br>
+            
+            <!-- <label for="habitacion">Nivel de Habitación:</label>
+            <select id="habitacion" name="habitacion" [(ngModel)]="hotel.habitacion">
+                <option value="estandar">Estándar</option>
+                <option value="deluxe">Deluxe</option>
+                <option value="suite">Suite</option>
+            </select> -->
+            <br>
+            <label for="regimen">Servicios:</label>
+            <!-- <select id="servicio"  name="servicio" [(ngModel)]="autoMovilReserva.idServicio">
+                <option *ngFor="let item of servicios;" value="{{item.id}}"  >{{item.nombre}}>Selecione</option>
+                
+            </select> -->
+
+            <select id="servicio"  name="servicio" [(ngModel)]="autoMovilReserva.idServicio">
+                <option  value="1">GPS</option>
+                <option  value="3">Seguro>Selecione</option>
+                
+            </select>
+
+            <br>
+            <button (click)="reservar()">Reservar</button>
+            <button (click)="borrar()">Borrar</button>
+            <div>
+               Total: {{autoMovilReserva.precio | currency:'USD':'symbol':'1.2-2'}}
+            </div>
+        </div>
+    </div>
+</div>

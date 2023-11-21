@@ -36,7 +36,7 @@ export class TokenService {
     if (rol == '1')
       this.router.navigate(["/principalAdmin"]);
     else
-      this.router.navigate(["/"]);
+      this.router.navigate(["/principalCliente"]);
   }
   public logout() {
     window.sessionStorage.clear();

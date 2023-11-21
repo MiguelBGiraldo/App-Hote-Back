@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3 mt-5" class="sidebar">
+      <!-- Menú -->
+      <app-cliente-menu (displayView)="showView($event)"></app-cliente-menu>
+
+      <div *ngIf="botones == true">
+        <button type="submit" class="btn btn-sm1 btn-outline-primary" (click)="eliminarReserva()">
+          Eliminar la reserva <i class="bi bi-arrow-bar-left"></i></button>
+
+        <button type="submit" class="btn btn-sm1 btn-outline-primary" (click)="finalizarReserva()">
+          Finalizar reserva <i class="bi bi-arrow-bar-left"></i></button>
+      </div>
+
+    </div>
+    <div class="col-9 mt-5" id="mainContent">
+      <!-- Vista 1: Reemplaza 'app-crud-view' por el nombre de tu componente de la Vista 1 -->
+
+      <app-lista-hoteles *ngIf="currentView === 'hotel'"></app-lista-hoteles>
+
+      <!-- Vista 2: Reemplaza 'app-another-view' por el nombre de tu componente de la Vista 2 -->
+      <app-lista-habitaciones *ngIf="currentView === 'habitacion'"></app-lista-habitaciones>
+
+      <app-lista-automoviles *ngIf="currentView === 'listaAutomoviles'"></app-lista-automoviles>
+
+      <app-hospedaje *ngIf="currentView === 'hospedaje' "> </app-hospedaje>
+
+      <app-reserva-automoviles *ngIf="currentView === 'reservaAutomovil'"></app-reserva-automoviles>
+
+      <app-lista-tour *ngIf="currentView === 'listaTour'"></app-lista-tour>
+
+    </div>
+  </div>
+</div>

@@ -27,6 +27,13 @@ import { HabitacionComponent } from './pagina/habitacion/habitacion.component';
 import { GestionHabitacionComponent } from './pagina/gestion-habitacion/gestion-habitacion.component';
 import { MenuComponent } from './pagina/menu/menu.component';
 import { PrincipalAdministradorComponent } from './pagina/principal-administrador/principal-administrador.component';
+import { VistaClienteComponent } from './pagina/vista-cliente/vista-cliente.component';
+import { ClienteMenuComponent } from './pagina/cliente-menu/cliente-menu.component';
+import { ListaHotelesComponent } from './pagina/lista-hoteles/lista-hoteles.component';
+import { ListaHabitacionesComponent } from './pagina/lista-habitaciones/lista-habitaciones.component';
+import { ListaAutomovilesComponent } from './pagina/lista-automoviles/lista-automoviles.component';
+import { ReservaAutomovilesComponent } from './pagina/reserva-automoviles/reserva-automoviles.component';
+import { ListaTourComponent } from './pagina/lista-tour/lista-tour.component';
 
 
 @NgModule({
@@ -53,7 +60,14 @@ import { PrincipalAdministradorComponent } from './pagina/principal-administrado
     HabitacionComponent,
     GestionHabitacionComponent,
     MenuComponent,
-    PrincipalAdministradorComponent
+    PrincipalAdministradorComponent,
+    VistaClienteComponent,
+    ClienteMenuComponent,
+    ListaHotelesComponent,
+    ListaHabitacionesComponent,
+    ListaAutomovilesComponent,
+    ReservaAutomovilesComponent,
+    ListaTourComponent
   ],
   imports: [
     BrowserModule,

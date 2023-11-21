@@ -1,0 +1,21 @@
+
+.menu {
+    list-style: none;
+
+    margin-top: 60px;
+    /* Ajusta el margen superior para evitar la superposición con la cabecera */
+    width: 100%;
+    /* Ancho del menú */
+    background-color: #f8f8f8;
+    /* Color de fondo del menú */
+
+}
+
+.menu li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu li:hover {
+    background-color: #f0f0f0;
+}
