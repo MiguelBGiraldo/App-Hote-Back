@@ -22,6 +22,7 @@ import { HabitacionComponent } from './pagina/habitacion/habitacion.component';
 import { GestionHabitacionComponent } from './pagina/gestion-habitacion/gestion-habitacion.component';
 import { PrincipalAdministradorComponent } from './pagina/principal-administrador/principal-administrador.component';
 import { VistaClienteComponent } from './pagina/vista-cliente/vista-cliente.component';
+import { CarritoComponent } from './pagina/carrito/carrito.component';
 
 
 const routes: Routes = [
@@ -52,7 +53,8 @@ const routes: Routes = [
   {path: 'gestionHabitacion', component:GestionHabitacionComponent},
   {path: 'editarHabitacion/:cod', component:HabitacionComponent},
   {path: 'principalAdmin', component:PrincipalAdministradorComponent},
-  {path: 'principalCliente', component:VistaClienteComponent}
+  {path: 'principalCliente', component:VistaClienteComponent},
+  {path: 'carrito', component:CarritoComponent}
 ];
 
 @NgModule({

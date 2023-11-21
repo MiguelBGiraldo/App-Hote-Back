@@ -62,10 +62,13 @@ export class ReservaAutomovilesComponent implements OnInit {
 
   public reservar() {
 
-    this.comunicacionReserva.setIdResAutomovil(new Date().getTime() + "");
+    let id = new Date().getTime() + "";
+    this.comunicacionReserva.setIdResAutomovil(id);
     this.comunicacionReserva.setAutomovil(this.automovil);
+    this.autoMovilReserva.id = id;
     this.comunicacionReserva.setReservaAutomovil(this.autoMovilReserva);
     this.comunicacionService.sendView('');
+    this.comunicacionService.sendButton(true);
   }
 
 

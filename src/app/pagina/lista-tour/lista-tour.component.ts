@@ -36,14 +36,15 @@ export class ListaTourComponent {
     });
   }
 
-  public selectCar(id: string) {
+  public selectPaquete(id: string) {
 
     this.paqueteService.listar(id).subscribe({
       next: data => {
         let paquete = data.result;
-        this.hotelDataService.setSelectAutomovil(id);
-        this.comunicacionReserva.setIdPaquete(paquete);
+        this.comunicacionReserva.setPaquete(paquete);
+        this.comunicacionReserva.setIdPaquete(id);
         this.comunicacionService.sendView('');
+        this.comunicacionService.sendButton(true);
       },
       error: error => {
         console.log(error.error);

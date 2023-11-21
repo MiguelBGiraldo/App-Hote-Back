@@ -34,6 +34,8 @@ import { ListaHabitacionesComponent } from './pagina/lista-habitaciones/lista-ha
 import { ListaAutomovilesComponent } from './pagina/lista-automoviles/lista-automoviles.component';
 import { ReservaAutomovilesComponent } from './pagina/reserva-automoviles/reserva-automoviles.component';
 import { ListaTourComponent } from './pagina/lista-tour/lista-tour.component';
+import { ListaArticulosComponent } from './pagina/lista-articulos/lista-articulos.component';
+import { CarritoComponent } from './pagina/carrito/carrito.component';
 
 
 @NgModule({
@@ -67,7 +69,9 @@ import { ListaTourComponent } from './pagina/lista-tour/lista-tour.component';
     ListaHabitacionesComponent,
     ListaAutomovilesComponent,
     ReservaAutomovilesComponent,
-    ListaTourComponent
+    ListaTourComponent,
+    ListaArticulosComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

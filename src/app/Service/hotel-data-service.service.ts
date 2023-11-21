@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MensajeDTO } from '../modelo/mensaje-dto';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ArticuloDTO } from '../modelo/articulo-dto';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,7 @@ export class HotelDataServiceService {
   nombreHotel: string = "";
   selectedRooms: string = "";
   selectAutomovilId: string = "";
+  
 
   constructor(private http: HttpClient){
     this.selectedHotelId = "";

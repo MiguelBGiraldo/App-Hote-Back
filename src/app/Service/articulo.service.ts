@@ -20,13 +20,13 @@ export class ArticuloService {
   }
   public listar(codigoArticulo: string) {
 
-    return this.http.get<MensajeDTO>(`${this.articuloUrl}?peticion=listarHotel&codigo=${codigoArticulo}`);
+    return this.http.get<MensajeDTO>(`${this.articuloUrl}?peticion=listarArticulo&codigo=${codigoArticulo}`);
 
   }
 
   public listarAll(pagina: number) {
 
-    return this.http.get<MensajeDTO>(`${this.articuloUrl}?peticion=listarHoteles&page=${pagina}`);
+    return this.http.get<MensajeDTO>(`${this.articuloUrl}?peticion=listarArticulos&page=${pagina}`);
   }
 
   // public obtener(cod: number){

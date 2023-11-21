@@ -47,10 +47,13 @@ export class HospedajeComponent {
 
   public reservar() {
 
+    let id = new Date().getTime() + "";
     window.sessionStorage.removeItem("idReserva");
-    window.sessionStorage.setItem("idReserva",  new Date().getTime() + "");
+    window.sessionStorage.setItem("idReserva", id );
     this.comunicacionService.sendButton(true);
+    this.reserva.id = id;
     this.comunicacionReserva.setReserva(this.reserva);
+    this.comunicacionReserva.setHabitacion(this.habitacion);
     alert("Ahora puedes ver el carrito");
     this.comunicacionService.sendView("");
   }
